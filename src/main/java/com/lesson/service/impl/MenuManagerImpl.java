@@ -4,6 +4,7 @@ import com.lesson.model.Menu;
 import com.lesson.dao.MenuDAO;
 import com.lesson.service.MenuManager;
 import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,18 @@ public class MenuManagerImpl implements MenuManager {
     @Autowired
     MenuDAO menuDAO;
 
+    @Autowired
+    SqlSessionTemplate sessionTemplate;
+
     public List<Menu> getAllMenus() {
         return menuDAO.getAllMenus();
     }
 
     public List<Menu> getMenusByMidCid(String mid, String cid) {
+
+        System.out.println(sessionTemplate);
+
+        System.out.println(sessionTemplate.getConnection());
         return menuDAO.getMenuByMidCid(mid, cid);
     }
 

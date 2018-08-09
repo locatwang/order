@@ -2,9 +2,11 @@ package com.lesson.dao;
 
 import com.lesson.model.Menu;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface MenuDAO {
     @Select("SELECT * FROM menus;")
     @Results({

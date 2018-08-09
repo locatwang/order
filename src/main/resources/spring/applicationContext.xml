@@ -12,10 +12,12 @@
 	<!-- 数据源：DB连接配置 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://YourDBHost:YourDBPort/order?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
-	 	<property name="username" value="YourDBUsername" />
-        <property name="password" value="YourDBPassword" />
+		<!--<property name="url" value="jdbc:mysql://10.32.22.224:3306/order?useUnicode=true&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false" />-->
+		<property name="url" value="jdbc:mysql://192.168.1.102:3306/order?useUnicode=true&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false" />
+	 	<property name="username" value="root" />
+        <property name="password" value="wr159753" />
 	</bean>
+	<!--<context:component-scan base-package="com.lesson.model" />-->
 
 	<!-- 数据会话工厂：映射模型包-->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
